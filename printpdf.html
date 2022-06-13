@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/2.1.0/jquery.js">
+		</script>
+		<!-- <script src="https://cdn.bootcdn.net/ajax/libs/ckeditor/4.19.0/ckeditor.js"></script> -->
+		<script src="./ckeditor.js"></script>
+	</head>
+	<body>
+
+		<div id="jquerydemo"></div>
+		<main style="margin-top:50px;">
+			<!-- <div class="adjoined-bottom"> -->
+			<div class="grid-container">
+				<div class="grid-width-100">
+				
+
+							<textarea name="editor1" id="editor1">&lt;p&gt;Initial editor content.&lt;/p&gt;</textarea>
+							
+							<button type="button" id="btn_save">确定</button>
+							<script type="text/javascript">
+								window.onload = function() {
+									
+									CKEDITOR.config.width = "100%";
+									CKEDITOR.config.extraPlugins = 'autogrow';
+									CKEDITOR.config.autoGrow_minHeight = 500;
+									
+									CKEDITOR.config.autoGrow_bottomSpace = 50;
+									CKEDITOR.config.allowedContent = true; // 关闭标签过滤
+									CKEDITOR.replace('editor1', {
+										customConfig: 'ckeditor_config.js'
+									});
+									
+									// 获取数据
+									CKEDITOR.instances.editor1.setData("ssssswsssssssssssssssssssssssssssssssssss");
+
+									console.log(CKEDITOR.instances.editor1.getData());
+								}
+								
+								// 提交数据
+								$("#btn_save").on("click",function(){
+									alert(CKEDITOR.instances.editor1.getData());
+								})
+							</script>
+						
+					</form>
+				</div>
+			</div>
+			<!-- </div> -->
+		</main>
+
+
+	</body>
+</html>
